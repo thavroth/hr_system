@@ -1,0 +1,44 @@
+<mvc:View
+	controllerName="ui5.walkthrough.controller.Main"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+
+	xmlns:tnt="sap.tnt"
+	height="100%">
+
+	<tnt:ToolPage id="toolPage" sideExpanded="true">
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Button
+					id="sideNavigationToggleButton"
+					icon="sap-icon://menu2"
+					type="Transparent"
+					press=".onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+				<ToolbarSpacer width="30px" />
+				<tnt:ToolHeaderUtilitySeparator />
+				<ToolbarSpacer />
+				 <Button icon="sap-icon://home" text="Home" type="Transparent" press=".onHomePress" ariaHasPopup="Menu" />
+				<Button icon="sap-icon://bell" text="Notification" type="Transparent" press=".onNotificationPress" ariaHasPopup="Menu" />
+    			<Button icon="sap-icon://person-placeholder" id="button" text="My Account" type="Transparent" press=".onMyAccountPress" ariaHasPopup="Menu" />
+		
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation id="sideNavigation" expanded="true" itemSelect=".onItemSelect">
+				<tnt:NavigationList id="navigationList">
+					<tnt:NavigationListItem text="Employees" icon="sap-icon://person-placeholder" key="employees" />
+					<tnt:NavigationListItem text="Items" icon="sap-icon://product" key="users" />
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			   <NavContainer id="appContainer" />
+		</tnt:mainContents>
+	</tnt:ToolPage>
+
+</mvc:View>

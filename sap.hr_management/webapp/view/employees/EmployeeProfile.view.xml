@@ -1,0 +1,397 @@
+<mvc:View 
+    controllerName="ui5.walkthrough.controller.employees.EmployeeProfile"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    class="GridPropertiesSample"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:w="sap.ui.integration.widgets"
+    displayBlock="true">
+    
+    <Page class="sapUiContentPadding" title="Employee Profile" 	showNavButton="true"
+		navButtonPress=".onNavBack">
+        <l:VerticalLayout
+			width="100%"
+		>
+			<l:VerticalLayout
+				width="100%"
+				class="gridWrapper">
+			<l:Grid
+					containerQuery="true"
+		       
+                    >
+                <VBox>
+                        <layoutData>
+                                <l:GridData span="XL8 L8 M12 S12"  />
+                        </layoutData>
+                
+                    <f:GridList id="grid1">
+                        	<f:customLayout>
+                                <grid:GridBasicLayout  gridGap="0.5rem" />
+                            </f:customLayout>
+                            
+                           
+                            <f:GridListItem>
+                                <f:layoutData>
+                                    <grid:ResponsiveColumnItemLayoutData  />
+                                </f:layoutData>
+
+                                <VBox class="sapUiMediumMargin">
+                                
+                                    <!-- Header -->
+                                    <HBox alignItems="Center" justifyContent="SpaceBetween">
+                                         <Avatar
+                                            src="https://png.pngitem.com/pimgs/s/419-4196791_transparent-confused-man-png-default-profile-png-download.png"
+                                            displaySize="L"
+                                            displayShape="Circle"
+                                            press="onPress"/>
+                                    </HBox>
+                                    <HBox alignItems="Center" justifyContent="SpaceBetween">   
+                                            <VBox>
+                                                <Title text="{profile>/FullName}" level="H5" />
+                                                <Text text="{profile>/JobTitle}" />
+                                                <Label text="{profile>/HomeAddress}"  wrapping="true" />
+                                        
+                                            </VBox>
+                                            <VBox  alignItems="Start" justifyContent="End">
+                                                <HBox  alignItems="Center">
+                                                        <core:Icon
+                                                            src="sap-icon://person-placeholder"
+                                                            class="sapUiTinyMarginEnd"
+                                                        >
+                                                            <core:layoutData>
+                                                                <FlexItemData growFactor="1" />
+                                                            </core:layoutData>
+                                                        </core:Icon>
+                                                    <Text text="Techneat" />
+                                                </HBox>
+                                                <HBox  alignItems="Center">
+                                                    <core:Icon
+                                                            src="sap-icon://person-placeholder"
+                                                            class="sapUiTinyMarginEnd"
+                                                        >
+                                                            <core:layoutData>
+                                                                <FlexItemData growFactor="1" />
+                                                            </core:layoutData>
+                                                        </core:Icon>
+                                                    <Text text="Mr. John Doe" />
+                                                </HBox>
+                                            </VBox>
+                                          
+                                  
+
+                                    </HBox>
+                                    <HBox>
+                                         <VBox class="sapUiMediumMarginTop">
+                                        <Text text="376 connections" />
+                                        <HBox>
+                                            <Button 
+                                            text="Check-in"  
+                                            press="onViewPress" 
+                                            class="sapUiTinyMarginEnd"
+                                            />
+                                            <Button 
+                                            text="On Duty"
+                                            class="sapUiTinyMarginEnd"
+                                            press="onEditPress"  
+                                            />
+                                            <Button 
+                                            text="Check-out" 
+                                            press="onDeletePress"  
+                                            />
+                                        </HBox>
+                                        
+                                    </VBox>
+                                    </HBox>
+                                    
+                                </VBox>
+
+                            </f:GridListItem>
+
+                            
+
+                            <f:GridListItem>
+                                <f:layoutData>
+                                    <grid:ResponsiveColumnItemLayoutData   />
+                                </f:layoutData>
+
+                                        <VBox class="sapUiMediumMargin">
+                                        <Title text="Performance:"  wrapping="true" />
+                                        <VBox>
+                                            <HBox justifyContent="SpaceBetween" class="sapUiMediumMarginTop responsiveBox">
+                                    
+                                                <VBox class="sapUiTinyMarginEnd">
+                                                    <HBox alignItems="Center">
+                                                        <core:Icon
+                                                            src="sap-icon://person-placeholder"
+                                                            class="sapUiTinyMarginEnd"
+                                                        >
+                                                            <core:layoutData>
+                                                                <FlexItemData growFactor="1" />
+                                                            </core:layoutData>
+                                                        </core:Icon>
+                                                        <Text text="Competency" />
+                                                    </HBox>
+                                                </VBox>
+
+                                                <VBox class="sapUiTinyMarginEnd">
+                                                    <HBox alignItems="Center">
+                                                        <core:Icon
+                                                            src="sap-icon://person-placeholder"
+                                                            class="sapUiTinyMarginEnd"
+                                                        >
+                                                            <core:layoutData>
+                                                                <FlexItemData growFactor="1" />
+                                                            </core:layoutData>
+                                                        </core:Icon>
+                                                        <Text text="Productivity"  />
+                                                    </HBox>
+                                                                            
+                                                </VBox>
+
+                                                <VBox class="sapUiTinyMarginEnd">
+                                                    <HBox alignItems="Center">
+                                                        <core:Icon
+                                                            src="sap-icon://person-placeholder"
+                                                            class="sapUiTinyMarginEnd"
+                                                        >
+                                                            <core:layoutData>
+                                                                <FlexItemData growFactor="1" />
+                                                            </core:layoutData>
+                                                        </core:Icon>
+                                                        <Text text="Interpersonal" />
+                                                    </HBox>
+                                                </VBox>
+                                            </HBox>
+
+                                        </VBox>               
+                                    </VBox>
+                                    <VBox class=" footerSection" alignItems="Center">
+                    
+                                            <HBox  alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+                                            
+                                                <Button icon="sap-icon://arrow-right" text="Show all performances" iconFirst="false" class="sapUiTinyMarginEnd" />
+
+                                            </HBox>
+                                        
+                                    </VBox>
+
+                            
+                            </f:GridListItem>
+
+                            <f:GridListItem>
+                                <f:layoutData>
+                                    <grid:ResponsiveColumnItemLayoutData  />
+                                </f:layoutData>
+                                 <VBox class="sapUiMediumMargin">
+                                    <Title text="Work Experience:"  wrapping="true" />
+                                    <VBox class="sapUiSmallMarginTop">
+                                            <List>
+                                                <StandardListItem
+                                                    title="Functional Consultant"
+                                                    description="2015 - Present"
+                                                    icon="sap-icon://product"
+                                                    iconDensityAware="false"
+                                                    iconInset="false" />
+                                                <StandardListItem
+                                                    title="Functional Consultant"
+                                                    description="2015 - Present"
+                                                    icon="sap-icon://product"
+                                                    iconDensityAware="false"
+                                                    iconInset="false" />
+                                            </List>
+
+                                    </VBox>        
+                                </VBox>
+                                
+                            </f:GridListItem>
+
+                    </f:GridList>
+                
+                </VBox>
+
+                <VBox >
+                    <layoutData>
+                            <l:GridData span="XL4 L4 M12 S12"  />
+                    </layoutData>
+          
+                     <f:GridList id="grid2" >
+                        <f:customLayout>
+                            <grid:GridBasicLayout  gridGap="0.5rem" />
+                        </f:customLayout>
+                        <f:GridListItem>
+                            <f:layoutData>
+                                <grid:ResponsiveColumnItemLayoutData columns="12" rows="12" />
+                            </f:layoutData>
+
+                            <VBox class="sapUiMediumMargin">
+                                <!-- Header -->
+                                <HBox alignItems="Center" justifyContent="SpaceBetween">
+                                    <VBox>
+                                        <Title text="Working Shift:" wrapping="true" />
+                                        <Text text="OF001: Office Shift" wrapping="true" />
+
+                                    </VBox>
+                                
+                                    <core:Icon src="sap-icon://away"
+                                            class="sapUiTinyMarginEnd"
+                                            size="1.5rem"
+                                            />
+                                </HBox>
+                                <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
+                                    <VBox>
+                                        <!-- Shift Start -->
+                                        <HBox>
+                                            <Label text="Shift Start:" wrapping="true" />
+                                            <Text text="08:00" class="sapMTextBlue sapUiTinyMarginStart" wrapping="true" />
+                                        </HBox>
+                                        <!-- Shift End -->
+                                        <HBox>
+                                            <Label text="Shift End:" wrapping="true" />
+                                            <Text text="18:00" class="sapMTextBlue sapUiTinyMarginStart" wrapping="true" />
+                                        </HBox>
+                                    </VBox>
+
+                                    <VBox>
+                                    
+                                        <HBox>
+                                            <Label text="Break Start:" wrapping="true" />
+                                            <Text text="08:00" class="sapMTextBlue sapUiTinyMarginStart" wrapping="true" />
+                                        </HBox>
+                                
+                                        <HBox>
+                                            <Label text="Break End:" wrapping="true" />
+                                            <Text text="18:00" class="sapMTextBlue sapUiTinyMarginStart" wrapping="true" />
+                                        </HBox>
+                                    </VBox>
+                                </HBox>
+                                <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
+                                    <VBox>
+                                    
+                                        <HBox>
+                                            <Label text="Late Check-in:" wrapping="true" />
+                                            <Text text="08:00" class="sapMTextBlue sapUiTinyMarginStart" wrapping="true" />
+                                        </HBox>
+                                    
+                                        <HBox justifyContent="Center">
+                                            <Label text="Early Check-out:" wrapping="true" />
+                                            <Text text="18:00"  />
+                                        </HBox>
+                                    </VBox>
+                                </HBox>
+                                
+                            </VBox>
+
+                        </f:GridListItem>
+
+                        
+                        <f:GridListItem>
+                            <f:layoutData>
+                                <grid:ResponsiveColumnItemLayoutData columns="12" rows="12" />
+                            </f:layoutData>
+
+                            <VBox class="sapUiMediumMargin">
+                                                    <!-- Header -->
+                                <HBox alignItems="Center" justifyContent="SpaceBetween">
+                                                        <Title text="Leave Info:" wrapping="true" />
+                                                        <core:Icon src="sap-icon://overflow"
+                                                                class="sapUiTinyMarginEnd"
+                                                                size="1.5rem"
+                                                                />
+                                </HBox>
+                                                    
+                                                    <!-- Body - Table -->
+                                <VBox class="sapUiSmallMarginTop">
+                                    <Table id="table2" 	growing="true"
+                                                        growingThreshold="2">
+                                                            <columns>
+                                                                <Column>
+                                                                    <Text text="Leave" />
+                                                                </Column>
+                                                                <Column>
+                                                                    <Text text="Max" />
+                                                                </Column>
+                                                                <Column>
+                                                                    <Text text="Taken" />
+                                                                </Column>
+                                                                <Column>
+                                                                    <Text text="Taken" />
+                                                                </Column>
+                                                            
+                                                            
+                                                            </columns>
+                                                            <items>
+                                                                <ColumnListItem>
+                                                                    <cells>
+                                                                        <Text text="title" />
+                                                                        <Text text="description" />
+                                                                        <Text text="title" />
+                                                                        <Text text="description" />
+                                
+                                                                    </cells>
+                                                                </ColumnListItem>
+                                                            </items>
+                                    </Table>
+                                </VBox>
+                                                    
+                                                    <!-- Footer - Centered Button -->
+                                <HBox justifyContent="Center" class="sapUiSmallMargin">
+                                        <Button text="leave Request" type="Emphasized" />
+                                </HBox>
+                            </VBox>
+                        </f:GridListItem>
+
+                        <f:GridListItem>
+                            <f:layoutData>
+                                <grid:ResponsiveColumnItemLayoutData columns="12" rows="12" />
+                            </f:layoutData>
+                            <VBox class="sapUiMediumMargin">
+                                                    <!-- Header -->
+                                    <HBox alignItems="Center" justifyContent="SpaceBetween">
+                                                        <Title text="To Do - List:" wrapping="true" />
+                                                        <core:Icon src="sap-icon://message-information"
+                                                                class="sapUiTinyMarginEnd"
+                                                                size="1.5rem"
+                                                                />
+                                    </HBox>             
+                                    <List>
+                                        <CustomListItem>
+                                            <HBox  class="sapUiSmallMargin">
+                                                <!-- Avatar Component for Circular Image -->
+                                                <Avatar
+                                                    src="https://png.pngitem.com/pimgs/s/419-4196791_transparent-confused-man-png-default-profile-png-download.png"
+                                                    displayShape="Circle"
+                                                    displaySize="S"
+                                                    class="sapUiTinyMarginEnd"
+                                                />
+                                                <!-- Details next to the avatar -->
+                                                <VBox>
+                                                    <Title text="Functional Consultant" class="sapUiSmallTinyMarginBottom" />
+                                                    <Text text="2015 - Present"/>
+
+                                                    <HBox class="sapUiSmallMarginTop">
+                                                        <Button text="View" />
+                                                    </HBox>
+                                                </VBox>
+                                            </HBox>
+                                        
+                                        </CustomListItem>
+
+                                    </List>
+                                        
+                            </VBox>
+                        </f:GridListItem>
+
+                    </f:GridList>
+                
+                </VBox>
+                   
+	        </l:Grid>
+        </l:VerticalLayout>
+    </l:VerticalLayout>
+      
+  
+</Page>
+</mvc:View>

@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="logoutConfirmDialog" title="Logout" >
+        <content >
+            <Text class="sapUiSmallMargin" text="Do you want to logout?" />
+        </content>
+        <beginButton>
+            <Button text="Yes" press="onConfirmLogout" />
+        </beginButton>
+        <endButton>
+            <Button text="No" press="onCancelLogout" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

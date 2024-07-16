@@ -1,0 +1,42 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.items.Form"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    height="100%">
+
+    <VBox fitContainer="true">
+        <Toolbar>
+            <Button text="Back" icon="sap-icon://nav-back" press=".onBackPress" />
+            <Title text="{= ${itemModel>/mode} === 'Create' ? 'Create Item' : ${itemModel>/mode} === 'Update' ? 'Update Item' : 'View Item' }" level="H2" />
+        </Toolbar>
+
+
+        <form:SimpleForm id="simpleForm" >
+            <Label text="Item Code" />
+            <Input value="{itemModel>/ItemCode}" >
+            </Input>
+             <Text text="{itemModel>/itemCodeError}" visible="{= ${itemModel>/itemCodeError} !== '' }" />
+
+            <Label text="Item Name" />
+            <Input value="{itemModel>/ItemName}" >
+            </Input>
+             <Text text="{itemModel>/itemCodeError}"  visible="{= ${itemModel>/itemCodeError} !== '' }" />
+
+
+            <Label text="Item Type" />
+            <Input value="{itemModel>/ItemType}" >
+            </Input>
+             <Text text="{itemModel>/itemCodeError}" visible="{= ${itemModel>/itemCodeError} !== '' }" />
+
+
+            <!-- Add more fields as required -->
+        </form:SimpleForm>
+
+        <HBox justifyContent="End">
+            <Button text="Save" visible="{= ${itemModel>/mode} !== 'View' }" press=".onSavePress" />
+            <Button text="Cancel" visible="{= ${itemModel>/mode} !== 'View' }" press=".onCancelPress" />
+        </HBox>
+    </VBox>
+</mvc:View>

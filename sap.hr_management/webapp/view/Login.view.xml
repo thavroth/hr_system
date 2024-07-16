@@ -1,0 +1,23 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true"
+    height="100%"
+    class="sapUiContentPadding">
+
+    <FlexBox justifyContent="Center" alignItems="Center" height="50%">
+        <Panel headerText="Login"  width="100%" class="sapUiSmallMargin sapUiContentPadding">
+                <Label text="Username" />
+                <Input id="usernameInput" width="100%" />
+                <Label text="Password" class="sapUiSmallMarginTop" />
+                <Input id="passwordInput" type="Password" width="100%" />
+                <Label text="Company DB" class="sapUiSmallMarginTop" />
+                <Input id="companyDBInput" width="100%" />
+                <Button text="Login" press="onLoginPress" width="100%" type="Emphasized" class="sapUiSmallMarginTop" />
+                <Text id="errorMessage" text="" visible="false" />
+       
+        </Panel>
+    </FlexBox>
+
+</mvc:View>

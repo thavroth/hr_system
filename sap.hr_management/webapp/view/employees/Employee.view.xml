@@ -1,0 +1,59 @@
+
+
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="ui5.walkthrough.controller.employees.Employee"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:w="sap.ui.integration.widgets"
+    displayBlock="true"
+  >
+  
+    <Page title="Employee List" class="sapUiContentPadding">
+            <VBox width="100%" justifyContent="Start" class=" sapUiLargeMarginBottom sapUiSmallMarginTop">
+                <Title text="Employees ({ui>/pagination/totalItems})" level="H2" />
+                <HBox class="sapUiSmallMarginTop sapUiTinyMarginBottom">
+                    <SearchField width="200px" search="onSearch" placeholder="Search Employee" liveChange="onSearchLive" />
+                </HBox>
+                <OverflowToolbar>
+                    <ToolbarSpacer />
+                    <Button icon="sap-icon://close-command-field" press="onFirstPage" tooltip="First" enabled="{ui>/pagination/hasPrevious}" />
+                    <Button icon="sap-icon://navigation-left-arrow" press="onPreviousPage" tooltip="Previous" enabled="{ui>/pagination/hasPrevious}" />
+                    <Text text="Page {ui>/pagination/currentPage} of {ui>/pagination/totalPages}" />
+                    <Button icon="sap-icon://navigation-right-arrow" press="onNextPage" tooltip="Next" enabled="{ui>/pagination/hasNext}" />
+                    <Button icon="sap-icon://open-command-field" press="onLastPage" tooltip="Last" enabled="{ui>/pagination/hasNext}" />
+                </OverflowToolbar>
+
+                <f:GridList items="{ui>/currentEmployees}" class=" sapUiSmallMarginTop">
+                        		<f:customLayout>
+                                    <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(18rem, 1fr))" gridGap="1rem" />
+                                </f:customLayout>
+                                 
+                            <f:GridListItem>
+                                <f:layoutData>
+                                    <grid:ResponsiveColumnItemLayoutData  />
+                                </f:layoutData>
+                                 <HBox class="sapUiSmallMargin cardContent">
+                                
+                                    <Image src="https://png.pngitem.com/pimgs/s/419-4196791_transparent-confused-man-png-default-profile-png-download.png" width="100px" height="110px" class="sapUiSmallMarginEnd" />
+
+                                    <VBox class="sapUiTinyMarginStart" justifyContent="SpaceBetween">
+                                        <VBox>
+                                            <Title text="{ui>FirstName} {ui>LastName}" level="H5" wrapping="true" />
+                                            <Label text="{ui>JobTitle}" wrapping="true" />
+                                        </VBox>
+            
+                                        <HBox>
+                                            <Button text="See Details" press="onNavToEmployeeProfile" type="Emphasized" />     
+                                        </HBox>
+                                    </VBox>
+                                </HBox>
+
+                            </f:GridListItem>
+                    </f:GridList>      
+            </VBox>
+    </Page>
+</mvc:View>
