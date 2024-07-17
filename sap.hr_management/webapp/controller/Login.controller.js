@@ -10,21 +10,21 @@ sap.ui.define([
         onLoginPress: function () {
             var that = this;
 
-            // var username = this.byId("usernameInput").getValue();
-            // var password = this.byId("passwordInput").getValue();
-            // var companyDB = this.byId("companyDBInput").getValue();
-
-            // var payload = {
-            //     "CompanyDB": companyDB,
-            //     "UserName": username,
-            //     "Password": password
-            // };
+            var username = this.byId("usernameInput").getValue();
+            var password = this.byId("passwordInput").getValue();
+            var companyDB = this.byId("companyDBInput").getValue();
 
             var payload = {
-                "CompanyDB": "TLTELA_DEVELOPER",
-                "UserName": 'manager',
-                "Password": '1234'
+                "CompanyDB": companyDB,
+                "UserName": username,
+                "Password": password
             };
+
+            // var payload = {
+            //     "CompanyDB": "TLTELA_DEVELOPER",
+            //     "UserName": 'manager',
+            //     "Password": '1234'
+            // };
 
             LoginModel.login(payload,
                 function onSuccess(data) {
