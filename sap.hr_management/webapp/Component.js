@@ -10,9 +10,19 @@ sap.ui.define([
         },
 
         init: function() {
+            this._setupAjaxErrorHandler();
          
             UIComponent.prototype.init.apply(this, arguments);
             this.getRouter().initialize();
+            
+        },
+
+        _setupAjaxErrorHandler: function () {
+            $(document).ajaxError((event, jqXHR) => {
+                if (jqXHR.status === 401) {
+                    this.getRouter().navTo("login");
+                }
+            });
         }
     });
 });
