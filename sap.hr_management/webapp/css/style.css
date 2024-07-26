@@ -1,4 +1,25 @@
 
+.sapTntToolHeader.sapMTB{
+    border-radius: 0 !important;
+}
+
+
+/* CSS to hide the sideContent */
+.sideContentHidden {
+    display: none !important;
+}
+
+/* CSS to show the sideContent */
+.sideContentVisible {
+    display: block !important;
+}
+
+    
+  
+
+
+
+
 
 
 

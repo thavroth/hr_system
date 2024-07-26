@@ -1,44 +1,107 @@
+
 <mvc:View
-	controllerName="ui5.walkthrough.controller.Main"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:core="sap.ui.core"
-
+    controllerName="ui5.walkthrough.controller.Main"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
 	xmlns:tnt="sap.tnt"
-	height="100%">
+	xmlns:layout="sap.ui.layout" 
+	xmlns:f="sap.f"
+    height="100%">
 
-	<tnt:ToolPage id="toolPage" sideExpanded="true">
-		<tnt:header>
-			<tnt:ToolHeader>
-				<Button
-					id="sideNavigationToggleButton"
-					icon="sap-icon://menu2"
-					type="Transparent"
-					press=".onSideNavButtonPress">
-					<layoutData>
-						<OverflowToolbarLayoutData priority="NeverOverflow" />
-					</layoutData>
-				</Button>
-				<ToolbarSpacer width="30px" />
-				<tnt:ToolHeaderUtilitySeparator />
-				<ToolbarSpacer />
-				 <Button icon="sap-icon://home" text="Home" type="Transparent" press=".onHomePress" ariaHasPopup="Menu" />
-				<Button icon="sap-icon://bell" text="Notification" type="Transparent" press=".onNotificationPress" ariaHasPopup="Menu" />
-    			<Button icon="sap-icon://person-placeholder" id="button" text="My Account" type="Transparent" press=".onMyAccountPress" ariaHasPopup="Menu" />
+	<VBox>
+			<tnt:ToolHeader id="shellLikeToolHeader">
+			<Button icon="sap-icon://menu2" type="Transparent" tooltip="Menu" press=".onSideNavButtonPress">
+				<layoutData>
+					<OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</layoutData>
+			</Button>
+			<Image src="https://www.biz-dimension.com/wp-content/uploads/2021/08/Biz-Logo-Final.png" decorative="false" press="onLogoPressed" tooltip="SAP Logo">
+				<layoutData>
+					<OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</layoutData>
+			</Image>
 		
-			</tnt:ToolHeader>
-		</tnt:header>
-		<tnt:sideContent>
-			<tnt:SideNavigation id="sideNavigation" expanded="true" itemSelect=".onItemSelect">
-				<tnt:NavigationList id="navigationList">
-					<tnt:NavigationListItem text="Employees" icon="sap-icon://person-placeholder" key="employees" />
-					<tnt:NavigationListItem text="Items" icon="sap-icon://product" key="users" />
-				</tnt:NavigationList>
-			</tnt:SideNavigation>
-		</tnt:sideContent>
-		<tnt:mainContents>
-			   <NavContainer id="appContainer" />
-		</tnt:mainContents>
-	</tnt:ToolPage>
+			<ToolbarSpacer />
+			
+			<OverflowToolbarButton icon="sap-icon://card" type="Transparent" tooltip="Action 2" text="Action 2">
+				<layoutData>
+					<OverflowToolbarLayoutData group="2"/>
+				</layoutData>
+			</OverflowToolbarButton>
+			<ToolbarSeparator>
+				<layoutData>
+					<OverflowToolbarLayoutData group="2"/>
+				</layoutData>
+			</ToolbarSeparator>
+			<OverflowToolbarButton icon="sap-icon://action-settings" type="Transparent" text="Settings"/>
+			<Button icon="sap-icon://bell" type="Transparent" tooltip="Notification">
+				<layoutData>
+					<OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</layoutData>
+			</Button>
+			<tnt:ToolHeaderUtilitySeparator/>
+
+			<ToolbarSpacer width="1.125rem"/>
+			<Avatar src="" displaySize="XS" press=".onMyAccountPress" tooltip="Profile" id="button">
+				<layoutData>
+					<OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</layoutData>
+			</Avatar>
+		
+		</tnt:ToolHeader>
+
+	    <SplitApp id="splitApp" class="sapUiResponsiveContentPadding sapUiTinyMarginTop">	
+			<masterPages>
+				
+				<Page id="masterPage" showHeader="false">
+							<Toolbar>
+                    			<SearchField width="100%" search="onSearch" placeholder="Search menu" liveChange="onSearchLive" />
+							</Toolbar>
+						  <tnt:NavigationList id="navigationList" itemSelect="onItemSelect" items="{menu>/menuItems}" selectedKey="{menu>/selectedKey}">		
+									<tnt:NavigationListItem
+										text="{menu>title}"
+										icon="{menu>icon}"
+										key="{menu>key}"
+										expanded="false"
+										items="{
+											path: 'menu>subItems',
+											templateShareable: false
+										}">
+										<tnt:NavigationListItem
+											text="{menu>title}"
+											key="{menu>key}" />
+									</tnt:NavigationListItem>
+						
+							</tnt:NavigationList>
+				</Page>
+
+				
+			</masterPages>
+
+			<detailPages>
+				<Page id="detailPage" showHeader="false">
+								<IconTabBar
+									id="iconTabBar"
+									selectedKey="{menu>/selectedKey}"
+									select=".onItemSelect"
+									items="{menu>/menuItems}">
+									<items>
+										<IconTabFilter
+												text="{menu>title}"		
+												key="{menu>key}"
+
+											>
+										</IconTabFilter>
+									</items>
+								</IconTabBar>
+					<App id="appContainer"/>
+				</Page>
+			</detailPages>
+		</SplitApp>
+
+
+	</VBox>	
+
 
 </mvc:View>

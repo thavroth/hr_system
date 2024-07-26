@@ -1,0 +1,44 @@
+
+
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="ui5.walkthrough.controller.sales.Sale"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:w="sap.ui.integration.widgets"
+    displayBlock="true"
+  >
+    <Page showHeader="false" class="sapUiContentPadding">
+            <VBox width="100%" justifyContent="Start" class=" sapUiLargeMarginBottom sapUiSmallMarginTop">
+                <Title text="Sales Quotation" level="H2" /> 
+            </VBox>
+               <f:GridContainer
+                id="grid1"
+                class="sapUiSmallMarginTop sapUiSmallMarginBottom"
+                snapToRow="true"
+                items="{sales>/tiles}">
+                <f:layout>
+                    <f:GridContainerSettings rowSize="84px" columnSize="84px" gap="10px" />
+                </f:layout>
+                <f:layoutXS>
+                    <f:GridContainerSettings rowSize="70px" columnSize="70px" gap="10px" />
+                </f:layoutXS>
+
+                <GenericTile header="{sales>title}" press="onTilePress">
+                    <layoutData>
+                        <f:GridContainerItemLayoutData minRows="2" columns="2" />
+                    </layoutData>
+                    <TileContent>
+                        <ImageContent src="{sales>icon}" />
+                    </TileContent>
+                     <customData>
+                        <core:CustomData key="navKey" value="{sales>key}" />
+                    </customData>
+                </GenericTile>
+
+            </f:GridContainer>
+    </Page>
+</mvc:View>

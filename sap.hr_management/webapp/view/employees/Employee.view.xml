@@ -12,7 +12,7 @@
     displayBlock="true"
   >
   
-    <Page title="Employee List" class="sapUiContentPadding">
+    <Page showHeader="false" class="sapUiContentPadding">
             <VBox width="100%" justifyContent="Start" class=" sapUiLargeMarginBottom sapUiSmallMarginTop">
                 <Title text="Employees ({ui>/pagination/totalItems})" level="H2" />
                 <HBox class="sapUiSmallMarginTop sapUiTinyMarginBottom">

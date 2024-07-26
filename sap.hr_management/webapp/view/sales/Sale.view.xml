@@ -1,0 +1,46 @@
+<mvc:View
+	controllerName="ui5.walkthrough.controller.sales.Sale"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f"
+	xmlns:card="sap.f.cards"
+    xmlns:core="sap.ui.core"
+	xmlns:w="sap.ui.integration.widgets"
+	displayBlock="true"
+	height="100%">
+	<ScrollContainer
+		height="100%"
+		width="100%"
+        class="sapUiContentPadding"
+		vertical="true">
+
+        <VBox width="100%" justifyContent="Start" class="sapUiLargeMarginBottom sapUiSmallMarginTop">
+            <Title text="Sales" level="H2" />
+            <f:GridContainer
+                id="grid1"
+                class="sapUiSmallMarginTop sapUiSmallMarginBottom"
+                snapToRow="true"
+                items="{sales>/tiles}">
+                <f:layout>
+                    <f:GridContainerSettings rowSize="84px" columnSize="84px" gap="10px" />
+                </f:layout>
+                <f:layoutXS>
+                    <f:GridContainerSettings rowSize="70px" columnSize="70px" gap="10px" />
+                </f:layoutXS>
+
+                <GenericTile header="{sales>title}" press="onTilePress">
+                    <layoutData>
+                        <f:GridContainerItemLayoutData minRows="2" columns="2" />
+                    </layoutData>
+                    <TileContent>
+                        <ImageContent src="{sales>icon}" />
+                    </TileContent>
+                     <customData>
+                        <core:CustomData key="navKey" value="{sales>key}" />
+                    </customData>
+                </GenericTile>
+
+            </f:GridContainer>
+        </VBox>
+    </ScrollContainer>
+</mvc:View>

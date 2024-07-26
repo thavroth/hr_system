@@ -1,0 +1,19 @@
+
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="ui5.walkthrough.controller.sales.SaleOrder"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:w="sap.ui.integration.widgets"
+    displayBlock="true"
+  >
+  
+    <Page showHeader="false" class="sapUiContentPadding">
+            <VBox width="100%" justifyContent="Start" class=" sapUiLargeMarginBottom sapUiSmallMarginTop">
+                <Title text="Create Sales Order" level="H2" />
+            </VBox>
+    </Page>
+</mvc:View>

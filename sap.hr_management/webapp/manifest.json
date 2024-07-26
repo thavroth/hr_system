@@ -80,13 +80,97 @@
 		{
 			"pattern": "home",
 			"name": "home",
-			"target": ["home", "employees"]
+			"target": "employees"
 		  },
 		  
 		{
 			"pattern": "users",
 			"name": "users",
 			"target": "users"
+		},
+
+		{
+			"pattern": "sales",
+			"name": "sales",
+			"target": "sales"
+		},
+		{
+			"pattern": "sales/sales_quotations",
+			"name": "sales_quotations",
+			"target": "sales_quotations"
+		},
+		{
+			"pattern": "sales/create_sales_quotation",
+			"name": "create_sales_quotation",
+			"target": "create_sales_quotation"
+		},
+		{
+			"pattern": "sales/sales_orders",
+			"name": "sales_orders",
+			"target": "sales_orders"
+		},
+		{
+			"pattern": "sales/create_sales_order",
+			"name": "create_sales_order",
+			"target": "create_sales_order"
+		},
+		{
+			"pattern": "sales/ar_reserve_invoices",
+			"name": "ar_reserve_invoices",
+			"target": "ar_reserve_invoices"
+		},
+		{
+			"pattern": "sales/create_ar_reserve_invoice",
+			"name": "create_ar_reserve_invoice",
+			"target": "create_ar_reserve_invoice"
+		},
+		{
+			"pattern": "sales/deliveries",
+			"name": "deliveries",
+			"target": "deliveries"
+		},
+		{
+			"pattern": "sales/create_delivery",
+			"name": "create_delivery",
+			"target": "create_delivery"
+		},
+
+		{
+			"pattern": "sales/ar_invoices",
+			"name": "ar_invoices",
+			"target": "ar_invoices"
+		},
+		{
+			"pattern": "sales/create_ar_invoice",
+			"name": "create_ar_invoice",
+			"target": "create_ar_invoice"
+		},
+		{
+			"pattern": "sales/return_requests",
+			"name": "return_requests",
+			"target": "return_requests"
+		},
+		{
+			"pattern": "sales/create_return_request",
+			"name": "create_return_request",
+			"target": "create_return_request"
+		},
+		{
+			"pattern": "sales/returns",
+			"name": "returns",
+			"target": "returns"
+		},
+		{
+			"pattern": "sales/create_return",
+			"name": "create_return",
+			"target": "create_return"
+		},
+
+
+		{
+			"pattern": "payments",
+			"name": "payments",
+			"target": "payments"
 		},
 		{
 			"pattern": "dashboard",
@@ -136,6 +220,38 @@
 				"viewLevel": 1
 			},
 
+			"sales": {
+				"viewName": "sales.Sale",
+				"controlId": "appContainer",
+				"parent": "home",
+				"viewLevel": 1
+			},
+			"sales_quotations": {
+				"viewName": "sales.SaleQuotation",
+				"controlId": "appContainer",
+				"parent": "home",
+				"viewLevel": 1
+			},
+			"create_sales_quotation": {
+				"viewName": "sales.CreateSaleQuotation",
+				"controlId": "appContainer",
+				"parent": "home",
+				"viewLevel": 1
+			},
+			"sales_orders": {
+				"viewName": "sales.SaleOrder",
+				"controlId": "appContainer",
+				"parent": "home",
+				"viewLevel": 1
+			},
+
+	
+			"payments": {
+				"viewName": "payments.Payment",
+				"controlId": "appContainer",
+				"parent": "home",
+				"viewLevel": 1
+			},
 		
 			"employeeProfile": {
 				"viewName": "employees.EmployeeProfile",

@@ -1,0 +1,46 @@
+{
+    "menuItems": [
+        { "title": "Home", "icon": "sap-icon://home", "key": "home" },
+        { "title": "Employees", "icon": "sap-icon://person-placeholder", "key": "employees"},
+        { "title": "Users", "icon": "sap-icon://product", "key": "users"},
+        { 
+            "title": "Sales", 
+            "icon": "sap-icon://sales-order",
+            "key": "sales",
+            "subItems": [
+                { "title": "Sales Quotations", "key": "sales_quotations", "icon": "sap-icon://sales-order"},
+                { "title": "Create Sales Quotation", "key": "create_sales_quotation", "icon": "sap-icon://sales-order"},
+                { "title": "Sales Orders", "key": "sales_orders", "icon": "sap-icon://sales-order"},
+                { "title": "Create Sales Order", "key": "create_sales_order", "icon": "sap-icon://sales-order"},
+                { "title": "AR Reserve Invoices", "key": "ar_reserve_invoices", "icon": "sap-icon://add-document"},
+                { "title": "Create AR Reserve Invoice", "key": "create_ar_reserve_invoice", "icon": "sap-icon://add-document"},
+                { "title": "Deliveries", "key": "deliveries", "icon": "sap-icon://add-document"},
+                { "title": "Create Delivery", "key": "create_delivery", "icon": "sap-icon://add-document"},
+                { "title": "AR Invoices", "key": "ar_invoices", "icon": "sap-icon://add-document"},
+                { "title": "Create AR Invoice", "key": "create_ar_invoice", "icon": "sap-icon://home-share"},
+                { "title": "Return Requests", "key": "return_requests", "icon": "sap-icon://home-share"},
+                { "title": "Create Return Request", "key": "create_return_request", "icon": "sap-icon://home-share"},
+                { "title": "Returns", "key": "returns", "icon": "sap-icon://home-share"},
+                { "title": "Create Return", "key": "create_return", "icon": "sap-icon://home-share"},
+                { "title": "AR Credit Notes", "key": "ar_credit_notes", "icon": "sap-icon://home-share"},
+                { "title": "Create AR Credit Note", "key": "create_ar_credit_note", "icon": "sap-icon://home-share"},
+                { "title": "Sales & Purchasing Drafts", "key": "sales_purchasing_drafts", "icon": "sap-icon://home-share"},
+                { "title": "Docs in Approvals Process", "key": "docs_in_approvals_process", "icon": "sap-icon://home-share"},
+                { "title": "Approval Decisions", "key": "approval_decisions", "icon": "sap-icon://home-share"}
+
+
+            ]
+         
+        },
+        { 
+            "title": "Payments", 
+            "icon": "sap-icon://payment-approval",
+            "key": "payments",
+            "subItems": [
+                { "title": "Payment Process", "key": "payment_process", "icon": "sap-icon://home-share"},
+                { "title": "Invoice Process", "key": "invoice_process", "icon": "sap-icon://home-share"}
+            ]
+         
+        }
+    ]
+}
