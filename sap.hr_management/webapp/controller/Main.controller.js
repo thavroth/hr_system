@@ -89,7 +89,6 @@ sap.ui.define([
                 return;
             }
             oMenuModel.setProperty("/selectedKey", oSelectedItem.key);
-            this.expandParentItem(sRouteName);
             
         },
         
@@ -106,21 +105,6 @@ sap.ui.define([
                 }
             }
             return null;
-        },
-
-        expandParentItem: function (sKey) {
-            var oNavigationList = this.byId("navigationList");
-            var aItems = oNavigationList.getItems();
-
-            for (var i = 0; i < aItems.length; i++) {
-                var oItem = aItems[i];
-                if (oItem.getItems().some(function (subItem) {
-                    return subItem.getKey() === sKey;
-                })) {
-                    oItem.setExpanded(true);
-                    return;
-                }
-            }
         },
 
         onSideNavButtonPress: function () {
